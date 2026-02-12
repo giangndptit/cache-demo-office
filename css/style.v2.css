@@ -1,0 +1,62 @@
+/* style.v2.css (v2) - cố tình đổi màu để nhìn thấy khác ngay */
+:root {
+  --bg: #07130c;
+  --card: rgba(255,255,255,0.07);
+  --text: #effff3;
+  --muted: rgba(239,255,243,0.75);
+  --border: rgba(255,255,255,0.14);
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(90,255,170,0.22), transparent),
+              radial-gradient(900px 500px at 90% 20%, rgba(255,210,90,0.18), transparent),
+              var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 18px 60px;
+}
+
+.header h1 { margin: 0 0 6px; letter-spacing: 0.2px; }
+.subtitle { margin: 0; color: var(--muted); line-height: 1.55; }
+
+.card {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  backdrop-filter: blur(10px);
+}
+
+.list { margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+.steps { margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.65; }
+
+.pill-row { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+.pill {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer { margin-top: 22px; color: var(--muted); }
+
+.css-version::after{
+  content: "v2 (style.v2.css)";
+  font-weight: 800;
+  padding: 2px 8px;
+  margin-left: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(90,255,170,0.22);
+}

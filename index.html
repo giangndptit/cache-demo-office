@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cache Demo (HTML + CSS)</title>
+
+  <!-- Demo 1: URL KHÔNG đổi -> rất dễ bị cache -->
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- Demo 2: Cache-busting bằng đổi URL (bật dòng dưới, tắt dòng trên) -->
+  <!-- <link rel="stylesheet" href="./css/style.v2.css" /> -->
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Cache Demo (Static HTML + CSS)</h1>
+      <p class="subtitle">
+        Trang này hiển thị “CSS version” bằng pseudo-element. Nếu CSS bị cache, bạn sẽ thấy version cũ dù đã “deploy”.
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>Trạng thái</h2>
+      <ul class="list">
+        <li><strong>CSS Version đang hiển thị:</strong> <span class="css-version" aria-label="css-version"></span></li>
+        <li><strong>Gợi ý:</strong> Mở DevTools → Network → chọn file CSS → xem <code>from disk cache</code> / <code>Cache-Control</code>.</li>
+      </ul>
+      <div class="pill-row">
+        <span class="pill">HTML tĩnh</span>
+        <span class="pill">CSS tĩnh</span>
+        <span class="pill">Demo cache</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Kịch bản demo</h2>
+      <ol class="steps">
+        <li>Load trang lần đầu → thấy <em>CSS Version</em> (v1).</li>
+        <li>Giữ nguyên link <code>./css/style.css</code>, sửa nội dung file <code>style.css</code> thành v2 rồi deploy lại.</li>
+        <li>Nếu server/CDN set cache dài cho CSS, nhiều máy vẫn thấy v1 (kẹt cache).</li>
+        <li>Cách đúng: đổi URL CSS (vd: <code>style.v2.css</code> hoặc file có hash).</li>
+      </ol>
+    </section>
+
+    <footer class="footer">
+      <small>Tip: Nếu bạn đang demo qua CDN/Cloudflare, hãy set cache dài cho CSS để thấy “kẹt”, và no-cache cho HTML để thấy khác biệt.</small>
+    </footer>
+  </main>
+</body>
+</html>
