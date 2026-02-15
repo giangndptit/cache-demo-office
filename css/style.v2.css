@@ -47,7 +47,20 @@ body {
   border-radius: 999px;
   font-size: 13px;
   color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
+
+.pill-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  flex: 0 0 18px;
+  color: var(--muted);
+}
+.pill-icon path { opacity: 0.95; }
+.pill-text { line-height: 1; }
 
 .footer { margin-top: 22px; color: var(--muted); }
 
