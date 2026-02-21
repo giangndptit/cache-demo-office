@@ -38,6 +38,7 @@ body {
 }
 
 .list { margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+.link { color: var(--muted); text-decoration: none; }
 .steps { margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.65; }
 
 .pill-row { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
