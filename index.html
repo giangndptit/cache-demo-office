@@ -16,12 +16,12 @@
     <header class="header">
       <h1>Cache Issue demo Demo (Vanilla HTML + CSS + JS)</h1>
       <p class="subtitle">
-        This is demo page to show cache issue when deploy new version with same URL for static resources (CSS/JS). You can open DevTools → Network → chọn file CSS → xem <code>from disk cache</code> / <code>Cache-Control</code> to check if cache is working or not.
+        This is demo page to show cache issue when deploy new version with same URL for static resources (CSS/JS). You can open DevTools → Network → Choose file → check <code>from disk cache</code> / <code>Cache-Control</code> to check if cache is working or not.
       </p>
     </header>
 
     <section class="card">
-      <h2>Status</h2>
+      <h2>Content website</h2>
       <ul class="list">
         <li><strong>CSS Version is showing:</strong> <span class="css-version" aria-label="css-version"></span></li>
       </ul>
@@ -46,7 +46,7 @@
     <section class="card">
       <h2>Upload file (Admin)</h2>
       <form id="uploadForm" action="#" method="post" enctype="multipart/form-data">
-        <label for="uploadFile">Choose file for uploading:</label>
+        <label for="uploadFile">Choose file for uploading. It's available for Original server only:</label>
         <input id="uploadFile" name="file" type="file" required />
         <button type="submit">Upload</button>
         <div id="uploadStatus" aria-live="polite" style="margin-top:8px;color:var(--muted);"></div>
