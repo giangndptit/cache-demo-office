@@ -14,17 +14,16 @@
 <body>
   <main class="container">
     <header class="header">
-      <h1>Cache Demo (Vanilla HTML + CSS + JS)</h1>
+      <h1>Cache Issue demo Demo (Vanilla HTML + CSS + JS)</h1>
       <p class="subtitle">
-        Trang này hiển thị “CSS version” bằng pseudo-element. Nếu CSS bị cache, bạn sẽ thấy version cũ dù đã “deploy”.
+        This is demo page to show cache issue when deploy new version with same URL for static resources (CSS/JS). You can open DevTools → Network → chọn file CSS → xem <code>from disk cache</code> / <code>Cache-Control</code> to check if cache is working or not.
       </p>
     </header>
 
     <section class="card">
-      <h2>Trạng thái</h2>
+      <h2>Status</h2>
       <ul class="list">
-        <li><strong>CSS Version đang hiển thị:</strong> <span class="css-version" aria-label="css-version"></span></li>
-        <li><strong>Gợi ý:</strong> Mở DevTools → Network → chọn file CSS → xem <code>from disk cache</code> / <code>Cache-Control</code>.</li>
+        <li><strong>CSS Version is showing:</strong> <span class="css-version" aria-label="css-version"></span></li>
       </ul>
       <div class="pill-row">
         <span class="pill">
@@ -45,19 +44,9 @@
     </section>
 
     <section class="card">
-      <h2>Demo scenario V2</h2>
-      <ol class="steps">
-        <li>Load trang lần đầu → thấy <em>CSS Version</em> (v1).</li>
-        <li>Giữ nguyên link <code>./css/style.css</code>, sửa nội dung file <code>style.css</code> thành v2 rồi deploy lại.</li>
-        <li>Nếu server/CDN set cache dài cho CSS, nhiều máy vẫn thấy v1 (kẹt cache).</li>
-        <li>Cách đúng: đổi URL CSS (vd: <code>style.v2.css</code> hoặc file có hash).</li>
-      </ol>
-    </section>
-
-    <section class="card">
       <h2>Upload file (Admin)</h2>
       <form id="uploadForm" action="#" method="post" enctype="multipart/form-data">
-        <label for="uploadFile">Chọn file:</label>
+        <label for="uploadFile">Choose file for uploading:</label>
         <input id="uploadFile" name="file" type="file" required />
         <button type="submit">Upload</button>
         <div id="uploadStatus" aria-live="polite" style="margin-top:8px;color:var(--muted);"></div>
@@ -65,16 +54,18 @@
     </section>
 
     <section class="card">
-      <h2>Internal link</h2>
+      <h2>Quick link</h2>
       <ul class="list">
         <li> <a href="https://browser-cache.moffice.site/" class="link">Browser cache site</a></li>
         <li> <a href="https://public-cache.moffice.site/" class="link">CDN cache site</a></li>
-        <li> <a href="http://171.234.237.37/" class="link">No cache</a></li>
+        <li> <a href="http://171.234.237.37/" class="link">Original server without Cloudflare</a></li>
+        <li> <a href="https://trouble-cache.moffice.site/" class="link">Trouble cache site</a></li>
+        <li> <a href="https://vite-cache.moffice.site/" class="link">vite cache site</a></li>
       </ul>
     </section>
 
     <footer class="footer">
-      <small>Tip trick: Force clear cache data from server with <a href="/api/clear-cache" class="link">Clear-site-data</a>.</small>
+      <small>Tip trick: Force clear cache data from server with <i><a href="/api/clear-cache" class="link">Clear-Site-Data</a></i>. It's available trouble cache only.</small>
     </footer>
   </main>
   <script src="./js/upload.js"></script>
