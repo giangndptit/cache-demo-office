@@ -4,7 +4,9 @@ const redirectToLink = (url) => {
 
 const main = () => {
     redirectToLink('attendance://link');
-    redirectToLink('bizappstore://link');
+    setTimeout(() => {
+        redirectToLink('bizappstore://link');
+    }, 1000);
 }
 
 main();
